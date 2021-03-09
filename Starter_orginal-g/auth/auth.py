@@ -167,10 +167,8 @@ def verify_decode_jwt(token):
     return the decorator which passes the decoded payload to the decorated method
 '''
 def requires_auth(permission=''):
-    print(permission)
-    print(0.1)
     def requires_auth_decorator(f):
-        print(0.2)
+        #print(permission)
         @wraps(f)
         def wrapper(*args, **kwargs):
             try:
@@ -194,4 +192,4 @@ def requires_auth(permission=''):
 
 
         return wrapper
-    return 
+    return requires_auth_decorator  
